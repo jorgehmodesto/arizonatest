@@ -16,10 +16,17 @@ This project is based on a pre-set project, to test developer skills.
 
 ## What you need to know before running
 
+-- If you are using docker, with docker-compose... AWESOME! You just need to run the command "./run.sh", and let all the magic happen! 
+
+-- If you prefer to provide all the server conf, you must remember that:
+
 This project will communicate well, with a MySQL database, using Eloquent. But you can easily change it, by editing its 
 .env config file :D
 
 Dont forget about running the command "composer install" inside your server, in order to install all the project's dependencies
+
+This project depends of a migration and a seeder to run well, so please, do it! :D
+
 
 I think thats all \o/
 
