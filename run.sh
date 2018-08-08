@@ -11,14 +11,20 @@ docker-compose up -d
 
 docker exec -it php apt-get update
 
-docker exec -it php apt-get install curl php-cli php-mbstring git unzip
+docker exec -it php apt-get install curl -y
+
+docker exec -it php apt-get install git -y
+
+docker exec -it php apt-get install unzip -y
 
 docker exec -it php curl -sS https://getcomposer.org/installer -o composer-setup.php
 
-docker exec -it php php composer-setup.php --install-dir=/var/www/html/arizonatest --filename=composer
+docker exec -it php php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
 echo Install dependencies
-docker exec -it php arizonatest/composer install
+docker exec -it php composer update -d /var/www/html/arizonatest
+
+docker exec -it php bower install -d /var/www/html/arizonatest
 
 echo Generate key
 docker exec -it php php arizonatest/artisan key:generate
