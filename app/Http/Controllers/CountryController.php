@@ -31,11 +31,14 @@ class CountryController extends Controller
         // Gets countries list
         $aCountries = Countries::all()->toArray();
 
+        // Compiles the inversion param
+        $bInvert = $oRequest->get('invert') === 'true' ? true : false;
+
         // Instances country records helper
         $oCountriesRecordsHelper = new CountriesRecords();
 
         // Calls method to format countries records
-        $aCountries = $oCountriesRecordsHelper->defineFormat($oRequest->get('invert'), $aCountries);
+        $aCountries = $oCountriesRecordsHelper->defineFormat($bInvert, $aCountries);
 
         // Returns country list view
         return view('countries.list', [

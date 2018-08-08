@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="utf-8">
@@ -25,7 +25,11 @@
         <div class="container">
             <h1 class="display-3">Hello, Arizona!</h1>
             <p>Did you know all countries have an unified internet code? Click on the following button to take a look!</p>
-            <p><a class="mg-tp btn btn-primary btn-lg" href="javascript:loadContainerContent()" role="button">Show it!</a></p>
+            <p>
+                <a class="mg-tp btn btn-primary btn-lg" href="javascript:loadContainerContent(true, false)" role="button" id="showButton">Show it!</a>
+                <a class="mg-tp btn btn-primary btn-lg hidden" href="javascript:loadContainerContent(true, true)" role="button" id="restoreButton">Restore!</a>
+                <a class="mg-tp btn btn-success btn-lg hidden" href="javascript:loadContainerContent(true, false)" role="button" id="invertionButton" invert="false">Invert its order!</a>
+            </p>
         </div>
     </div>
 
