@@ -43,7 +43,7 @@ class CountryController extends Controller
         // Returns country list view
         return view('countries.list', [
             'oRequest' => $oRequest,
-            'aCountries' => $aCountries
+            'aCountries' => $aCountries,
         ]);
     }
 }

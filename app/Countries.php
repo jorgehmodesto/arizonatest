@@ -16,4 +16,11 @@ class Countries extends Model
      * @var string
      */
     protected $table = 'countries';
+
+    /**
+     * @var array
+     */
+    protected $fillable = [
+        'id', 'name', 'country_code',
+    ];
 }
